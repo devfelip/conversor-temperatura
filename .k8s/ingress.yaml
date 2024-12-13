@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-conversor-temperatura
+spec:
+  rules:
+    - host: conversor-temp.127.0.0.1.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: conversor-temperatura-service
+                port:
+                  number: 8080
