@@ -34,6 +34,5 @@ jobs:
       id: docker_build
       uses: docker/build-push-action@v2
       with:
-        context: ./src
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/conversor-temperatura:v1
